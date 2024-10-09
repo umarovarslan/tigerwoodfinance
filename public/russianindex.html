@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tigerwood Finance</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#performance-report">Отчет о результатах</a>
+            <a href="#calculator-section">Калькулятор</a>
+            <a href="#contact-section">Контакты</a>
+            <a href="index.html">Eng</a>
+        </nav>
+
+        <div class="header-content">
+            <h1>Tigerwood Finance</h1>
+            <p>Ваш надежный партнер для стабильного роста инвестиций</p>
+        </div>
+    </header>
+
+    <section id="crypto-price-ticker" class="live-price-ticker">
+        <div class="ticker-container">
+            <div class="ticker-content" id="tickerContent1">
+                <!-- Цены будут заполняться здесь динамически -->
+            </div>
+            <div class="ticker-content" id="tickerContent2">
+                <!-- Цены будут дублироваться здесь динамически -->
+            </div>
+        </div>
+    </section>
+
+    <section id="performance-report" class="performance-report">
+        <h2>Отчет о результатах</h2>
+        <h3>Месячные результаты</h3>
+        <table class="performance-table">
+            <thead>
+                <tr>
+                    <th>Год</th>
+                    <th>Месяц</th>
+                    <th>Наша прибыль</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2023</td>
+                    <td>Сентябрь</td>
+                    <td>19.62%</td>
+                </tr>
+                <tr>
+                    <td>2023</td>
+                    <td>Октябрь</td>
+                    <td>22.45%</td>
+                </tr>
+                <tr>
+                    <td>2023</td>
+                    <td>Ноябрь</td>
+                    <td>-1.92%</td>
+                </tr>
+                <tr>
+                    <td>2023</td>
+                    <td>Декабрь</td>
+                    <td>28.34%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>Январь</td>
+                    <td>13.84%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>Февраль</td>
+                    <td>26.17%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>Март</td>
+                    <td>23.58%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>Апрель</td>
+                    <td>7.37%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>Май</td>
+                    <td>9.41%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>Июнь</td>
+                    <td>8.50%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>Июль</td>
+                    <td>6.00%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>Август</td>
+                    <td>7.88%</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Мы предоставляем прозрачные и детализированные отчеты для наших инвесторов. Ниже приведен скриншот нашего последнего отчета о результатах.</p>
+        <img src="performance-report.png" alt="Скриншот отчета о результатах">
+    </section>
+
+    <section id="calculator-section" class="calculator-section">
+        <div class="calculator-container glow">
+            <h2>Калькулятор прибыли</h2>
+            <div class="form-group">
+                <label for="investmentAmount">Сумма инвестиций ($):</label>
+                <input type="number" id="investmentAmount" placeholder="Введите сумму" required>
+            </div>
+            <div class="form-group">
+                <label for="yearSelect">Год:</label>
+                <select id="yearSelect">
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="monthSelect">Месяц:</label>
+                <select id="monthSelect">
+                    <option value="Сентябрь">Сентябрь</option>
+                    <option value="Октябрь">Октябрь</option>
+                    <option value="Ноябрь">Ноябрь</option>
+                    <option value="Декабрь">Декабрь</option>
+                    <option value="Январь">Январь</option>
+                    <option value="Февраль">Февраль</option>
+                    <option value="Март">Март</option>
+                    <option value="Апрель">Апрель</option>
+                    <option value="Май">Май</option>
+                    <option value="Июнь">Июнь</option>
+                    <option value="Июль">Июль</option>
+                    <option value="Август">Август</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="compoundInterest">Тип процента:</label>
+                <select id="compoundInterest">
+                    <option value="compound">Сложный процент</option>
+                    <option value="simple">Простой процент</option>
+                </select>
+            </div>
+            <button class="calculate-button" onclick="calculate()">Рассчитать</button>
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="result-container" id="result"></div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="investmentChart"></canvas>
+        </div>
+    </section>
+
+    <section id="contact-section" class="contact-section">
+        <h2>Контакты</h2>
+        <p>Email: <a href="mailto:tigerwoodfinance@umaroff.com">tigerwoodfinance@umaroff.com</a></p>
+        <p>Телефон: <a href="tel:+8613661650998">+8613661650998</a></p>
+        <p>WhatsApp: <a href="https://wa.me/8613661650998">Напишите нам</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tigerwood Finance. Все права защищены.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

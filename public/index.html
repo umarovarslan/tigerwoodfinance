@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tigerwood Finance</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#performance-report">Performance Report</a>
+            <a href="#calculator-section">Calculator</a>
+            <a href="#contact-section">Contact Us</a>
+            <a href="russianindex.html">Rus</a>
+            <a href="login.html" class="login-button">Log In</a> <!-- New Log In button -->
+        </nav>
+
+        
+        <div class="header-content">
+            <h1>Tigerwood Finance</h1>
+            <p>Your Trusted Partner for Consistent Investment Growth</p>
+        </div>
+    </header>
+
+    <section id="crypto-price-ticker" class="live-price-ticker">
+        <div class="ticker-container">
+            <div class="ticker-content" id="tickerContent1">
+                <!-- Prices will be populated here dynamically -->
+            </div>
+            <div class="ticker-content" id="tickerContent2">
+                <!-- Prices will be duplicated here dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <section id="performance-report" class="performance-report">
+        <h2>Performance Report</h2>
+        <h3>Monthly Performance</h3>
+        <table class="performance-table">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Month</th>
+                    <th>Our Profit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2023</td>
+                    <td>September</td>
+                    <td>19.62%</td>
+                </tr>
+                <tr>
+                    <td>2023</td>
+                    <td>October</td>
+                    <td>22.45%</td>
+                </tr>
+                <tr>
+                    <td>2023</td>
+                    <td>November</td>
+                    <td>-1.92%</td>
+                </tr>
+                <tr>
+                    <td>2023</td>
+                    <td>December</td>
+                    <td>28.34%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>January</td>
+                    <td>13.84%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>February</td>
+                    <td>26.17%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>March</td>
+                    <td>23.58%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>April</td>
+                    <td>7.37%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>May</td>
+                    <td>9.41%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>June</td>
+                    <td>8.50%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>July</td>
+                    <td>6.00%</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>August</td>
+                    <td>7.88%</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>We provide transparent and detailed reports for our investors. Below is a screenshot of our most recent performance report.</p>
+        <img src="performance-report.png" alt="Performance Report Screenshot">
+    </section>
+
+
+    <section id="calculator-section" class="calculator-section">
+        <div class="calculator-container glow">
+            <h2>Profit Calculator</h2>
+            <div class="form-group">
+                <label for="investmentAmount">Investment Amount ($):</label>
+                <input type="number" id="investmentAmount" placeholder="Enter amount" required>
+            </div>
+            <div class="form-group">
+                <label for="yearSelect">Year:</label>
+                <select id="yearSelect">
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="monthSelect">Month:</label>
+                <select id="monthSelect">
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="compoundInterest">Interest Type:</label>
+                <select id="compoundInterest">
+                    <option value="compound">Compound Interest</option>
+                    <option value="simple">Simple Interest</option>
+                </select>
+            </div>
+            <button class="calculate-button" onclick="calculate()">Calculate</button>
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="result-container" id="result"></div>
+        </div>
+    
+        <div class="chart-container">
+            <canvas id="investmentChart"></canvas>
+        </div>
+    </section>
+    
+
+    <section id="contact-section" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:tigerwoodfinance@umaroff.com">tigerwoodfinance@umaroff.com</a></p>
+        <p>Phone: <a href="tel:+8613661650998">+8613661650998</a></p>
+        <p>WhatsApp: <a href="https://wa.me/8613661650998">Chat with us</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tigerwood Finance. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
